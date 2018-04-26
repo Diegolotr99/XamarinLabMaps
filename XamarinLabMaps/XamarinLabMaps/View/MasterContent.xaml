@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLabMaps.View.MasterContent"
+             x:Name="MasterContent"
+             Title="MasterContent">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Margin="20" Padding="10">
+            <Label Text="Welcome to" Font="20" FontAttributes="Bold"
+               XAlign="Center"  />
+            <Label Text="Xamarin Forms Cenfotec Lab Maps!" Font="20" FontAttributes="Bold"
+               XAlign="Center"  />
+            <Label Text="Menu Options:"  Font="20" FontAttributes="Bold"
+              XAlign="Center"   />
+            <Label Text="-Add a Map Pin" Font="18" 
+              XAlign="Center"   />
+            <Label Text="-See List of Pins Added" Font="18" 
+              XAlign="Center"  />
+            <Label Text="-See the Map View with the Pins" Font="18" 
+              XAlign="Center"  />
+            <Label Text="-Edit User Preferences" Font="18" 
+              XAlign="Center"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

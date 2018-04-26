@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLabMaps.View.LoginView">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
+            <Image Source="Location_100px" />
+            <Label Text="Sign In" Font="32" FontAttributes="Bold" TextColor="Black" XAlign="Center" />
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" Margin="40,20,40,0" Padding="10" >
+               
+                <Entry Text="{Binding Username}" Placeholder="Enter Username..." TextColor="Black" FontSize="Medium" />
+                <Entry Text="{Binding Password}" IsPassword="True" TextColor="Black" Placeholder="Enter Password..." FontSize="Medium"  />
+                <StackLayout Orientation="Horizontal">
+                <Label Text="Remember me?" TextColor="Black" FontAttributes="Bold" Font="20" />
+                <Switch IsToggled="{Binding RememberUser}"  VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="40,5">
+                <Button Text="Enter"
+                        Command="{Binding SignInClickedCommand}"
+                        HorizontalOptions="FillAndExpand" BackgroundColor="RoyalBlue" TextColor="White" FontAttributes="Bold" Font="20" />
+            </StackLayout>
+        </StackLayout>     
+    </ContentPage.Content>
+</ContentPage>

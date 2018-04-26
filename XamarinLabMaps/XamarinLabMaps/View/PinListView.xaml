@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="PinListView"
+             x:Name="PinListView"
+             x:Class="XamarinLabMaps.View.PinListView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Pin List" Font="20" FontAttributes="Bold" TextColor="Black"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding PinCollection}" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<ImageCell ImageSource="{Binding Logo}" Text="{Binding Text}"  />-->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Fill" Margin="5">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer  Command="{Binding Path=BindingContext.TapOnListedPinCommand, Source={x:Reference PinListView}}" CommandParameter="{Binding Label}"/>
+                                </StackLayout.GestureRecognizers>
+                                <StackLayout>
+                                <Image Source="Location_100px" HeightRequest="52" WidthRequest="48" Margin="30,10,5,5" HorizontalOptions="Start" />
+                                </StackLayout>
+                                    <StackLayout Orientation="Vertical" Padding="5">
+                                        <Label Text="{Binding Label}" FontAttributes="Bold" TextColor="Black" Font="18" YAlign="Center" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"></Label>
+                                        <Label Text="{Binding Position.Latitude}" FontAttributes="Italic" TextColor="DarkGray" Font="16" YAlign="Center" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"></Label>
+                                        <Label Text="{Binding Position.Longitude}" FontAttributes="Italic" TextColor="DarkGray" Font="16" YAlign="Center" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"></Label>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

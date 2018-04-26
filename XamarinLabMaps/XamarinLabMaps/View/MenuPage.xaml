@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLabMaps.View.MenuPage"
+             x:Name="MenuPage"
+             Title="MenuPage">
+    <ContentPage.Content>
+    <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" Margin="15,20">
+                <!--<Image Source="{Binding CurrentUser.Picture}" HeightRequest="80" WidthRequest="80" Margin="5,5,5,5" HorizontalOptions="EndAndExpand" />-->
+                <Image Source="Location_96px" HeightRequest="80" WidthRequest="80" Margin="20,5,5,5" HorizontalOptions="Start" />
+                <Label Text="Save your Pin Maps!" Font="20" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <ListView ItemsSource="{Binding InitialMenu}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<ImageCell ImageSource="{Binding Logo}" Text="{Binding Text}"  />-->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Fill">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer  Command="{Binding Path=BindingContext.MenuItemClickedCommand, Source={x:Reference MenuPage}}" CommandParameter="{Binding ID}"/>
+                                    </StackLayout.GestureRecognizers>
+                                    <Image Source="{Binding Logo}" HeightRequest="38" WidthRequest="38" Margin="30,10,5,5" HorizontalOptions="Start"></Image>
+                                    <Label Text="{Binding Text}" FontAttributes="Bold" TextColor="Black" Font="18" YAlign="Center" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                <StackLayout VerticalOptions="End" Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer  Command="{Binding SignOutClickedCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="LogoutLeft_96px" HeightRequest="38" WidthRequest="38" Margin="30,10,5,5" HorizontalOptions="Start"></Image>
+                    <Label Text="Sign Out" FontAttributes="Bold" TextColor="Black" Font="18" YAlign="Center" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
+
+                </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

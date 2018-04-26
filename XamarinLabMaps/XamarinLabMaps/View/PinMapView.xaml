@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinLabMaps.Model"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Name="PinMapView"
+             Title="PinMapView"
+             x:Class="XamarinLabMaps.View.PinMapView">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <local:BindableMap MapType="Street" MapPosition="{Binding MyPosition}" MapPins="{Binding PinCollection}" IsShowingUser="True" />
+            </StackLayout>
+            <StackLayout  BackgroundColor="DeepSkyBlue" Padding="5,5,5,5">
+                <Label Text="My Saved Pins:" FontAttributes="Bold" TextColor="White" Font="22" HorizontalOptions="CenterAndExpand" Margin="-10,0,0,0" />
+            </StackLayout>
+            <StackLayout VerticalOptions="End" HeightRequest="180" >
+                <ListView ItemsSource="{Binding PinCollection}" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<ImageCell ImageSource="{Binding Logo}" Text="{Binding Text}"  />-->
+                            <ViewCell>
+                                <StackLayout  Orientation="Horizontal" VerticalOptions="End">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer  Command="{Binding Path=BindingContext.MapTapOnListPinCommand, Source={x:Reference PinMapView}}" CommandParameter="{Binding Label}"/>
+                                    </StackLayout.GestureRecognizers>
+                                    <Image Source="Location_100px" HeightRequest="32" WidthRequest="32" Margin="30,10,5,5" HorizontalOptions="Start" />
+                                    <Label Text="{Binding Label}" FontAttributes="Bold" TextColor="Black" Font="16" YAlign="Center" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"></Label>
+                                    <Label Text="{Binding Address}" FontAttributes="Bold" TextColor="DarkGray" Font="14" YAlign="Center" Margin="2,0,0,0" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

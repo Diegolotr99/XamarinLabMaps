@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLabMaps.View.AddNewPinView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Source="MapEditing_96px" />
+            <Label Text="Add New Pin" Font="24" TextColor="Black" FontAttributes="Bold" XAlign="Center" />
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="20">
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"  />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                    <Label Text="Latitude" Grid.Row="0" Grid.Column="0" XAlign="Center" YAlign="Center"  Font="20" TextColor="Black" FontAttributes="Bold"  />
+                    <Entry Text="{Binding NewPinLatitude}" Placeholder="Enter Latitude..." Grid.Row="0" Grid.Column="1" />
+                    <Label Text="Longitude" Grid.Row="1" Grid.Column="0" XAlign="Center" YAlign="Center"  Font="20" TextColor="Black" FontAttributes="Bold" />
+                    <Entry  Text="{Binding NewPinLongitude}" Placeholder="Enter Longitude..." Grid.Row="1" Grid.Column="1" />
+                    <Label Text="Name" Grid.Row="2" Grid.Column="0" XAlign="Center" YAlign="Center"  Font="20" TextColor="Black" FontAttributes="Bold" />
+                    <Entry  Text="{Binding NewPinName}" Placeholder="Enter Name..." Grid.Row="2" Grid.Column="1"  />
+                    <Label Text="Description" Grid.Row="3" Grid.Column="0" XAlign="Center" YAlign="Center"  Font="20" TextColor="Black" FontAttributes="Bold" />
+                    <Entry  Text="{Binding NewPinDescription}" Placeholder="Enter Description..." Grid.Row="3" Grid.Column="1" />
+            </Grid>
+                <Button Text="Add New" Margin="20,0" Command="{Binding AddNewPinTapCommand}" />
+            </StackLayout>
+            
+        </StackLayout>
+            <StackLayout VerticalOptions="End" Margin="10">
+                <Button Text="Test- Add Several Pins Data" Command="{Binding AddTestPinLocationsCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

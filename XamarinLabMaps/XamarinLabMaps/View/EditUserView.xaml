@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLabMaps.View.EditUserView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" Padding="40" HorizontalOptions="FillAndExpand">
+                <Label Text="Username:" TextColor="Black" FontAttributes="Bold" Font="26"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" XAlign="Center" YAlign="Center" />
+            <Label Text="{Binding Username}" Font="24"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"  XAlign="Center" YAlign="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="40,0,40,0" HorizontalOptions="FillAndExpand">
+                <Label Text="Remember me?" TextColor="Black" FontAttributes="Bold" Font="26" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"  XAlign="Center" YAlign="Center"/>
+                <Switch IsToggled="{Binding RememberUser}"  VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

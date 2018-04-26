@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using XamarinLabMaps.View;
 using Xamarin.Forms;
 
 namespace XamarinLabMaps
@@ -13,8 +13,16 @@ namespace XamarinLabMaps
 		{
 			InitializeComponent();
 
-			MainPage = new XamarinLabMaps.MainPage();
-		}
+
+            //NavigationPage navigation = new NavigationPage(new MasterContent());
+
+            //App.Current.MainPage = new MasterDetailPage
+            //{
+            //    Master = new MenuPage(),
+            //    Detail = navigation
+            //};
+            App.Current.MainPage = new LoginView();
+        }
 
 		protected override void OnStart ()
 		{
